@@ -9,7 +9,6 @@ export default async function Home() {
 
   const isDataEmpty = !Array.isArray(cars) || cars.length < 1 || !cars;
 
-  console.log(cars);
 
   return (
     <main className='overflow-hidden'>
