@@ -7,8 +7,8 @@ import React from 'react'
 const CustomBtn = ({ title, containerStyles, handleClick, type, textStyles, disabled, rightIcon }: CustomBtnProps) => {
     return (
         <button
-            disabled={false}
-            type={'button'}
+            disabled={disabled ? disabled : false}
+            type={type ? type : 'button'}
             className={`custom-btn ${containerStyles}`}
             onClick={handleClick}
         >

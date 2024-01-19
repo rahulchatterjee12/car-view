@@ -1,5 +1,7 @@
-const getCars = async () => {
-    const url = 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla';
+import { FilterProps } from "@/types";
+
+const getCars = async ({ manufacturer, year, fuel, limit, model }: FilterProps) => {
+    const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=${model}&make=${manufacturer}&year=${year}&fuel_type=${fuel}&limit=${limit}`;
     const options = {
         method: 'GET',
         headers: {
@@ -11,7 +13,6 @@ const getCars = async () => {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result);
         return result;
     } catch (error) {
         console.error(error);
