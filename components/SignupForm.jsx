@@ -1,6 +1,6 @@
 import { Button, Stack, TextField, Typography, colors } from '@mui/material';
 import React from 'react';
-import { ScreenMode } from '../app/login/page';
+import { ScreenMode } from '@/constants';
 
 const SignupForm = ({ onSwitchMode }) => {
   return (

@@ -6,12 +6,8 @@ import assets from '../../assets'
 import SigninForm from '../../components/SigninForm';
 import SignupForm from '../../components/SignupForm';
 import { motion } from 'framer-motion';
+import { ScreenMode } from '@/constants';
 
-
-export const ScreenMode = {
-  SIGN_IN: "SIGN_IN",
-  SIGN_UP: "SIGN_UP"
-};
 
 const SigninPage = () => {
   const [left, setLeft] = useState(0);
