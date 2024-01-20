@@ -10,9 +10,9 @@ import { ScreenMode } from '@/constants';
 
 
 const SigninPage = () => {
-  const [left, setLeft] = useState(0);
-  const [right, setRight] = useState("unset");
-  const [width, setWidth] = useState(0);
+  const [left, setLeft] = useState<any>(0);
+  const [right, setRight] = useState<any>("unset");
+  const [width, setWidth] = useState<any>(0);
 
 
   const [backgroundImage, setBackgroundImage] = useState(assets.images?.signinBg);
