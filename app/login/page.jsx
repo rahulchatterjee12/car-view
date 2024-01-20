@@ -1,11 +1,12 @@
 "use client"
 
-import { Button, Stack, TextField, Typography } from '@mui/material';
 import { Box, Grid, colors } from '@mui/material';
 import React, { useState } from 'react';
 import assets from '../../assets'
 import SigninForm from '../../components/SigninForm';
 import SignupForm from '../../components/SignupForm';
+import { motion } from 'framer-motion';
+
 
 export const ScreenMode = {
   SIGN_IN: "SIGN_IN",
@@ -49,7 +50,11 @@ const SigninPage = () => {
   };
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: 150 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className='hidden md:block'>
         <Grid container sx={{ height: "100vh" }}>
           <Grid item xs={4} sx={{ position: "relative", padding: 3 }}>
@@ -116,7 +121,7 @@ const SigninPage = () => {
           }} />
         </Box>
       </div>
-    </>
+    </motion.div>
   );
 };
 
