@@ -23,7 +23,7 @@ const SigninPage = () => {
   const [currMode, setCurrMode] = useState(ScreenMode.SIGN_IN);
 
 
-  const onSwitchMode = (mode) => {
+  const onSwitchMode = (mode: any) => {
     setWidth(100);
 
     const timeout1 = setTimeout(() => {
