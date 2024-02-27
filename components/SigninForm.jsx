@@ -1,8 +1,32 @@
 import { Button, Stack, TextField, Typography, colors } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { ScreenMode } from '@/constants';
+import { ID, account } from '@/app/appwrite';
+
 
 const SigninForm = ({ onSwitchMode }) => {
+
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+
+  const login = async (email, password) => {
+    const session = await account.createEmailPasswordSession(email, password);
+    setLoggedInUser(await account.get());
+  };
+
+  const register = async () => {
+    await account.create(ID.unique(), email, password, name);
+    login(email, password);
+  };
+
+  const logout = async () => {
+    await account.deleteSession("current");
+    setLoggedInUser(null);
+  };
+
   return (
     <Stack
       justifyContent="center"
